@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="19" height="28" viewBox="0 0 19 28">
+    <defs>
+        <radialGradient id="c" cx="22.052%" cy="11.176%" r="89.087%" fx="22.052%" fy="11.176%" gradientTransform="matrix(.59946 .54313 -.8004 .40677 .178 -.053)">
+            <stop offset="0%" stop-color="#454545"/>
+            <stop offset="100%" stop-color="#212121"/>
+        </radialGradient>
+        <path id="b" d="M10.45 24.516c.568.323.95.926.95 1.617 0 1.031-.85 1.867-1.9 1.867-1.05 0-1.9-.836-1.9-1.867 0-.69.382-1.294.95-1.617v-5.895C3.75 18.152 0 14.173 0 9.333 0 4.18 4.253 0 9.5 0S19 4.179 19 9.333c0 4.84-3.75 8.82-8.55 9.288v5.895z"/>
+        <filter id="a" width="136.8%" height="125%" x="-18.4%" y="-16.1%" filterUnits="objectBoundingBox">
+            <feOffset dy="-1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.117612092 0"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <use fill="#000" filter="url(#a)" xlink:href="#b"/>
+        <use fill="url(#c)" xlink:href="#b"/>
+        <ellipse cx="9.5" cy="9.333" fill="#fd9573" rx="2.85" ry="2.8"/>
+    </g>
+</svg>

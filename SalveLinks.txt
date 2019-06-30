@@ -1,0 +1,21 @@
+https://stackoverflow.com/questions/44546199/how-to-download-a-file-with-react-native
+https://github.com/joltup/rn-fetch-blob
+https://facebook.github.io/react-native/docs/permissionsandroid.html
+
+https://developers.google.com/maps/documentation/distance-matrix/usage-and-billing
+
+2.398870250109208
+MapsMototaxista.js:184 2.0892054084401788
+MapsMototaxista.js:184 1.886305141826863
+
+{text: "3.1 km", value: 3125}
+{text: "9 mins", value: 520}
+
+distance: {text: "4.2 km", value: 4173}
+duration: {text: "12 mins", value: 727} 
+
+duration: {text: "10 mins", value: 587}
+distance: {text: "3.3 km", value: 3324}
+
+https://www.npmjs.com/package/react-native-date-ranges
+npm install rn-date-range

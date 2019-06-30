@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Bimp</string>
+    <string name="facebook_app_id">337286783624246</string>
+    <string name="fb_login_protocol_scheme">fb337286783624246</string>
+</resources>

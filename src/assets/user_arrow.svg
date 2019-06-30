@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="84" height="84" viewBox="0 0 84 84">
+    <defs>
+        <circle id="b" cx="31" cy="31" r="31"/>
+        <filter id="a" width="162.9%" height="162.9%" x="-31.5%" y="-41.1%" filterUnits="objectBoundingBox">
+            <feOffset dy="-6" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="5.5"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.117612092 0"/>
+        </filter>
+        <radialGradient id="c" cx="-42.723%" cy="124.183%" r="138.622%" fx="-42.723%" fy="124.183%" gradientTransform="matrix(.95473 -.29746 .29747 .95472 -.389 -.07)">
+            <stop offset="0%" stop-color="#B55636"/>
+            <stop offset="48.572%" stop-color="#EE7D58"/>
+            <stop offset="100%" stop-color="#FD9573"/>
+        </radialGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g opacity=".813" transform="translate(11 17)">
+            <use fill="#000" filter="url(#a)" xlink:href="#b"/>
+            <use fill="#FFF" xlink:href="#b"/>
+        </g>
+        <path fill="url(#c)" d="M27.493.218L1.778 12.087C-1.19 13.47-.2 17.823 2.964 17.823h10.88v10.88c0 3.165 4.352 4.154 5.737 1.187L31.45 4.174C32.439 1.8 29.867-.772 27.493.218z" transform="translate(26.167 32.167)"/>
+    </g>
+</svg>

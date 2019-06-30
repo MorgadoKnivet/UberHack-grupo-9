@@ -1,0 +1,84 @@
+tela inicial: Verificar peso da fonte no android (descritivo) (medium,)
+    Mudar icone de fundo de passageiro (já tem card disso)
+
+Tela Start 
+    Diminuir tamanho do gif em telas pequenas e verificar fonte e bordem botao facebook
+
+Tela Cadastro 1 passageiro
+    1 - Barra de progresso nao aparece em android
+    2 - Sombra no IOS (está no to do) (navbar)
+    3 - borda entre component input foto e primeiro inputText
+    4 - Tracejado de input foto é cinza e nao verde
+    5 - Verificar a troca do component picker pelo bottom sheet
+    6 - Texto BUtton Maiusculo
+    7 - quando tiver carregando, ficar sme sobre
+    8 - verificar erro de loading infinito, cadastro user
+
+POnto de referencia: Texto button e sombra e estado do button, sombra do navbar (ios)
+
+Search Corrida, puxa histórico de corridas e colocar ultimos endereços no backdrop
+    MoveCamera para posiçoes respectivas
+
+Verificar (com carinho) as sombras
+
+MAPSCC
+    retirar icone de scroll no bottom bar 
+
+MapsLOading
+    Impedir que a tela se mova e arrumar loading
+
+Back-end, impedir login com duas contas em devices diferentes
+
+verificar os estados de tela e transiçao de ajuda. 
+
+drawer user, verificar espaçamento de nota para email
+uma casa decimal na nota 
+
+Minhas corridas, verificar espaçamento de componentes mapa, espaço em Minhas Corridas
+retirar borda arredondada
+
+Login 
+    Retirar linha e verificar espaçamento
+
+MapsMototaxista
+    sombra dos bottons
+    diminuir foto e deixar componentes do mesmo tamanho, alinhados ao topo
+
+Notification 
+    Verificar margin lateral da foto do usuário
+
+Aceitar corrida 
+    Retirar icone de mesagem, arrumar button de deixar para 24 e radius 12
+
+Verificar fluxo de aceitar corrida indo para tela de usuário
+
+drawer mototaxista, com casa decimal e elevation
+
+Meu perfil Mototaxista retirar cartoa e arrumar icones
+
+
+Erros RELEASE
+
+
+2 - Erro de usuabilidade, está entrando aberto dois pop-ups, email confirmar e gps - abrindo apenas pop-up de GPS
+3 = Botao de centralizar motorista - Pedido ao Moreno   
+4 - Caso o usuário recuse a corrida com o pop-up aberto, fechar pop up ou criar um aviso de corrida aceita
+5 - CRLV, alterar nome do documento da moto
+6 - check list no email para deixar claros os motivos da reprovaçao
+7 - Prefiro não dizer trocar para " ... "
+8 - Deslogar o usuário ao confirmar email automaticamente, retirar confirmaçao via facebook 
+9 - Em zoom alto, icone nao está alinhado com a parte inferior
+10 - Arrumar tela de busca corrida com os feedbacks e novo design, 
+11 - Pensar no time máximo de requisiçao de corrida " ... "
+12 - Button negativo no pop up de tempo máximo de corrida
+13 - Button return em MapsCC voltando para request e naão para SearchCorrida
+14 - Excluir de list no bottom bar requiçao de corrida cancelada
+15 - Foto em pop-up aceitar corrida nao está aparecendo (passageiro)
+16 - Erro do pop up icone mudando de posiçao automaticamente (erro google maps)
+
+
+1 - Google Maps não abre no ANDROID 9 -- FEITO
+17 - FInalizar corrida, manter ligado - feito
+18 - Desligar e questionar se quer realmente desligar - feito 
+19 - Mudar component de acessar drawer  feito
+20 - Ver apple id - feito

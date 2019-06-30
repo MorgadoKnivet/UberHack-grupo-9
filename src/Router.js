@@ -1,0 +1,50 @@
+
+import React from 'react';
+import { Router, Scene, Drawer,Modal} from 'react-native-router-flux';
+
+import main from './Screens/main';
+import mainTwo from './Screens/mainTwo';
+import CardStackStyleInterpolator from "./Effects"
+import cadastro from './Screens/cadastro';
+import cadastroDois from './Screens/cadastroDois'
+
+const RouterComponent = () => {
+  return (
+
+        <Router >
+            <Scene key="root" transitionConfig={() => ({
+        screenInterpolator: (props) => {
+            switch (props.scene.route.params.direction) {
+                case 'vertical':
+                    return CardStackStyleInterpolator.forVertical(props);
+                case 'verticalDown':
+                    return CardStackStyleInterpolator.forVerticalUpToBottom(props);
+                case 'fade':
+                    return CardStackStyleInterpolator.forFade(props);
+                case 'none':
+                    return CardStackStyleInterpolator.forInitial
+                case 'horizontal':
+
+                default:
+                    return CardStackStyleInterpolator.forHorizontal(props)
+            }
+        }
+    })}>
+
+              {/*   <Scene key="teste" direction='horizontal' hideNavBar component={InputDoc}/>  <Scene key="Splash" direction='none' hideNavBar component={Splash} /> */}
+               {   /* */  }
+               <Scene key="cadastro" direction='none'  hideNavBar component={cadastro}/>
+
+               <Scene key="cadastroDois" direction='none'  hideNavBar component={cadastroDois}/>
+
+               <Scene key="main" direction='none'  hideNavBar component={main}/>
+
+               <Scene key="mainTwo" direction='none'  hideNavBar component={mainTwo}/>
+
+            </Scene>
+        </Router>
+  
+  );
+};
+
+export default RouterComponent;
