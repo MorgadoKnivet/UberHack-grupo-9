@@ -17,10 +17,12 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import Perfil from './components/perfilBlack'
 import ViewBottom from './components/ViewBottom'
 
+import { FirestoreReadCollection} from '../APIs/Firebase/FirebaseServices'
+import { Actions } from 'react-native-router-flux';
+
 console.disableYellowBox = true;
 
 export default class Main extends Component {
-
 
     state={
         daySegOK: true,
@@ -28,22 +30,79 @@ export default class Main extends Component {
         dayQuarOK:true,
         dayQuinOK:true,
         daySexOK: false,
+        array: [],
+        arrayInicial: []
+    }
+
+    onItemPress = (item) => {
+      console.log("Teste Item")
+      console.log(item)
+
+      Actions.mainTwo({user:item})
+     
     }
 
     renderItem = ({item}) => {
+
+  
         return ( 
-            <TouchableOpacity  style={styles.containerItem}> 
+            <TouchableOpacity onPress={()=>this.onItemPress(item)} style={styles.containerItem}> 
                 
-                <Perfil />
+                <Perfil foto={item._data.idFoto} afinidade={item._data.afinidade} avaliacao={item._data.avaliacao} nomeFilho={item._data.nomeFilho} nome={item._data.nome} />
 
                 <View style={{flex:1, alignItems:'flex-end'}}>
                     <View style={{ width: 45,height: 45,backgroundColor: "#f7c417",borderRadius:45/2,justifyContent:'center',alignItems:'center'}}>
                         <Image source={require('../assets/invalidName.png')}/>
                     </View>
                 </View>
+
             </TouchableOpacity >
         )
     
+    }
+
+    async componentDidMount (){
+      let response =  await FirestoreReadCollection("PaisMotoristas")
+
+      console.log(response) 
+
+      let array = response.response._docs
+
+      this.setState({array})
+    }
+
+    searchList = (aux) => {
+
+      
+
+      if (aux != "" || aux != null) {
+        console.log(aux)
+        for (const iterator of this.state.array) {
+          console.log(iterator)
+          if(iterator._data.enderecoColegio.includes(aux)){
+          //  console.log("teste") 
+          //  let {arrayInicial} = this.state
+         //   let arrayAux = []
+        //  // arrayAux.push(iterator)
+          //  let newArrat = arrayAux.concat(arrayInicial)
+        //    newArrat.push(iterator)
+           // const filteredData = corridasOrdenadas.filter(item => item.id !== id);
+        //   if (arrayInicial.length <= 1) {
+           // this.setState({arrayInicial:newArrat})
+          //  }
+          /*
+          }else{
+            let {arrayInicial} = this.state
+            const filteredData = arrayInicial.filter(iterator => it.id !== id);
+            this.setState({ arrayInicial:filteredData });
+  
+          }
+        */}
+        }
+      }
+
+     
+      
     }
     
 
@@ -62,7 +121,7 @@ export default class Main extends Component {
                     <View>
                         <Text style={styles.textInputTitulo}>Endereço da Escola</Text>
                         <View style={styles.viewTextInputDois}>
-                            <TextInput placeholder={"Rua Faro 80, Jardim Bot…"} style={styles.textInput}/>
+                            <TextInput onChangeText={(aux)=>this.searchList(aux)} placeholder={"Rua Faro 80, Jardim Bot…"} style={styles.textInput}/>
                         </View>
                       
                     </View>
@@ -97,7 +156,7 @@ export default class Main extends Component {
             <View>
                 <FlatList 
                     style = {styles.flatList} 
-                    data={[{},{}]} 
+                    data={this.state.array} 
                     renderItem={this.renderItem}
                     keyExtractor = {(item) => item.id}       
                 // extraData={this.state.corridas}

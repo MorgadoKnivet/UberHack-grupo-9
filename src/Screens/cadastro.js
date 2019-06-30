@@ -4,10 +4,41 @@ import { Text, View,StyleSheet,Platform,TextInput,TouchableOpacity  } from 'reac
 import NavBar from './components/NavBar'
 
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import { Actions } from 'react-native-router-flux';
 
 
 
 export default class cadastro extends Component {
+
+    state={
+        name:'',
+        endereco: '',
+        enderecoEscola: ''
+    }
+
+    salveName = (name) => {
+        this.setState({name})
+    }
+
+    salveEndereco = (endereco) =>{
+        this.setState({endereco})
+    }
+
+    enderecoDaEscola = (enderecoEscola) => {
+        this.setState({enderecoEscola})
+    }
+
+    nextCadastro = () => {
+        let {name,enderecoEscola,endereco} = this.state
+
+        console.log(name)
+        console.log(enderecoEscola)
+        console.log(endereco)
+
+        Actions.cadastroDois({name,enderecoEscola,endereco})
+
+    }
+
     render() {
         return (
             <View style={styles.container}>
@@ -20,7 +51,7 @@ export default class cadastro extends Component {
 
                     <Text style={styles.textNomeCompleto}>Nome Completo</Text>
                     <View style={styles.viewTextInput}> 
-                        <TextInput style={styles.textInput}/>
+                        <TextInput onChangeText={(text)=>this.salveName(text)} style={styles.textInput}/>
                     </View>
 
                     <View style={styles.tituloInputNome}>
@@ -29,15 +60,15 @@ export default class cadastro extends Component {
 
                     <Text style={styles.textNomeCompleto}>Seu endereço</Text>
                     <View style={styles.viewTextInput}> 
-                        <TextInput style={styles.textInput}/>
+                        <TextInput onChangeText={(text)=>this.salveEndereco(text)} style={styles.textInput}/>
                     </View>
 
                     <Text style={styles.textNomeCompleto}>Endereço da Escola</Text>
                     <View style={styles.viewTextInput}> 
-                        <TextInput style={styles.textInput}/>
+                        <TextInput  onChangeText={(text)=>this.enderecoDaEscola(text)} style={styles.textInput}/>
                     </View>
                 
-                    <TouchableOpacity style={styles.viewButton}>
+                    <TouchableOpacity style={styles.viewButton} onPress={this.nextCadastro}>
                             <Text style={styles.textButton}>Próxima</Text>
                     </TouchableOpacity>
                 

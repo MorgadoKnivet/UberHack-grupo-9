@@ -33,13 +33,15 @@ const RouterComponent = () => {
 
               {/*   <Scene key="teste" direction='horizontal' hideNavBar component={InputDoc}/>  <Scene key="Splash" direction='none' hideNavBar component={Splash} /> */}
                {   /* */  }
-               <Scene key="cadastro" direction='none'  hideNavBar component={cadastro}/>
 
-               <Scene key="cadastroDois" direction='none'  hideNavBar component={cadastroDois}/>
+               <Scene key="main" direction='horizontal'  hideNavBar component={main}/>
 
-               <Scene key="main" direction='none'  hideNavBar component={main}/>
+               <Scene key="cadastro" direction='horizontal'  hideNavBar component={cadastro}/>
 
-               <Scene key="mainTwo" direction='none'  hideNavBar component={mainTwo}/>
+               <Scene key="cadastroDois" direction='horizontal'  hideNavBar component={cadastroDois}/>
+
+
+               <Scene key="mainTwo" direction='horizontal'  hideNavBar component={mainTwo}/>
 
             </Scene>
         </Router>

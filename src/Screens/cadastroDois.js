@@ -6,12 +6,78 @@ import NavBar from './components/NavBar'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import RadioForm, {RadioButton, RadioButtonInput, RadioButtonLabel} from 'react-native-simple-radio-button';
 
+import {FirestoreCollectionDoc} from '../APIs/Firebase/FirebaseServices'
+import User from '../model/User'
+import { Actions } from 'react-native-router-flux';
+
 var radio_props = [
     {label: 'Único filho     ', value: 0 },
     {label: '2 ou mais filhos', value: 1 }
   ];
 
 export default class cadastro extends Component {
+
+    constructor(props){
+        super(props)
+
+        this.state = {
+            infoRadio: "",
+            nomeCompletoFilho: "",
+            serie: "",
+            entrada: "",
+            saida: ''
+        }
+
+    }
+
+   
+
+
+    salveRadio = (infoRadio) =>{
+        this.setState({infoRadio})
+    }
+
+    salveNomeCompletoFilho  = (nomeCompletoFilho) =>{
+        this.setState({nomeCompletoFilho})
+    }
+
+    salveSerie = (serie) => {
+        this.setState({serie})
+    }    
+
+    salveEntrada = (entrada) => {
+        this.setState({entrada})
+    }
+    
+    salveSaida = (saida) => {
+        this.setState({saida})
+    }
+
+    fazerCadastro = async () =>{
+       let {name,enderecoEscola,endereço} = this.props
+
+       console.log(name)
+       console.log(enderecoEscola)
+       console.log(endereço)
+
+       let {infoRadio,nomeCompletoFilho,serie,entrada,saida} = this.state
+       
+       console.log(infoRadio)
+       console.log(nomeCompletoFilho)
+       console.log(serie)
+       console.log(entrada)
+       console.log(saida)
+
+       let user = new User("",name,"",endereço,enderecoEscola,nomeCompletoFilho,serie,entrada,saida,infoRadio)
+
+        let response = await FirestoreCollectionDoc("Users","",user)
+
+        if (response.sucess) {
+            Actions.main()
+        }
+
+    }
+
     render() {
         return (
             <View style={styles.container}>
@@ -19,33 +85,33 @@ export default class cadastro extends Component {
 
                     <NavBar />
                     <View style={styles.tituloInputNome}>
-                        <Text style={styles.textInputNome}>Sobre seu filho(a)</Text>
+                        <Text  style={styles.textInputNome}>Sobre seu filho(a)</Text>
                     </View>
 
                     <Text style={styles.textNomeCompleto}>Nome Completo</Text>
                     <View style={styles.viewTextInput}> 
-                        <TextInput style={styles.textInput}/>
+                        <TextInput onChangeText={(text)=>this.salveNomeCompletoFilho(text)} style={styles.textInput}/>
                     </View>
 
                     <View style={{justifyContent: 'space-between', flex:1, flexDirection:'row'}}>
                         <View style={{height: 80,flex:1,}}> 
                             <Text style={styles.textNomeCompleto}>Série</Text>
                             <View style={styles.viewTextInputSerie}> 
-                                <TextInput style={styles.textInput}/>
+                                <TextInput onChangeText={(text)=>this.salveSerie(text)} style={styles.textInput}/>
                             </View> 
                         </View>
                         
                         <View style={{height: 80,flex:1,}}> 
                             <Text style={styles.textNomeCompleto}>Entrada</Text>
                             <View style={styles.viewTextInputTime}> 
-                                <TextInput style={styles.textInput}/>
+                                <TextInput  onChangeText={(text)=>this.salveEntrada(text)}  style={styles.textInput}/>
                             </View> 
                         </View>
                         
                         <View style={{height: 80,flex:1,}}> 
                             <Text style={styles.textNomeCompleto}>Saída</Text>
                             <View style={styles.viewTextInputTime}> 
-                                <TextInput style={styles.textInput}/>
+                                <TextInput onChangeText={(text)=>this.salveSaida(text)} style={styles.textInput}/>
                             </View> 
                         </View>
 
@@ -54,7 +120,7 @@ export default class cadastro extends Component {
                     <RadioForm
                         radio_props={radio_props}
                         initial={0}
-                        onPress={(value) => {this.setState({value:value})}}
+                        onPress={(value) => this.salveRadio(value)}
                         formHorizontal={true}
                         style={styles.radio}
                         buttonColor={"#ffffff"}
@@ -66,7 +132,7 @@ export default class cadastro extends Component {
                         
                     />
                   
-                    <TouchableOpacity style={styles.viewButton}>
+                    <TouchableOpacity style={styles.viewButton} onPress={this.fazerCadastro}>
                             <Text style={styles.textButton}>Cadastrar</Text>
                     </TouchableOpacity>
                 

@@ -9,11 +9,11 @@ import Router from './Router';
 //const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 //const store = createStoreWithMiddleware(reducers);
 console.disableYellowBox = true;
-const App = () => {
+const App = () => { 
   return (
    //<Provider store={store}>
     
-      <Router />
+      <Router />  
   //  </Provider>
   );
 };

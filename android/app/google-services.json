@@ -1,38 +1,38 @@
 {
   "project_info": {
-    "project_number": "489739528251",
-    "firebase_url": "https://bimp-91bf4.firebaseio.com",
-    "project_id": "bimp-91bf4",
-    "storage_bucket": "bimp-91bf4.appspot.com"
+    "project_number": "925911151247",
+    "firebase_url": "https://uberhack-4d532.firebaseio.com",
+    "project_id": "uberhack-4d532",
+    "storage_bucket": "uberhack-4d532.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:489739528251:android:43cbca61d67ea918",
+        "mobilesdk_app_id": "1:925911151247:android:43cbca61d67ea918",
         "android_client_info": {
           "package_name": "com.bimp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "489739528251-dimmr7olvt7qgb6lvmg8tu20dunduadh.apps.googleusercontent.com",
+          "client_id": "925911151247-a0vql5js8drn8htd6ddudkelantbtmsr.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDqY-qI3QUB6emhLkBJk3moWwqzUYJeNSA"
+          "current_key": "AIzaSyBkL8eIHamEXfRzb8femig3HlvE1hON5CI"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "489739528251-dimmr7olvt7qgb6lvmg8tu20dunduadh.apps.googleusercontent.com",
+              "client_id": "925911151247-a0vql5js8drn8htd6ddudkelantbtmsr.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "489739528251-us34dqv2f2o2bfcd60s1dupulho134qd.apps.googleusercontent.com",
+              "client_id": "925911151247-jic9u5hkgta18snvo4vrp5p3c2cj6ga3.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
                 "bundle_id": "org.reactjs.native.example.bimp"

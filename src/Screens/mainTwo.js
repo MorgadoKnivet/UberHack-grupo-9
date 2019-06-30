@@ -7,14 +7,26 @@ import CheckDaySemana from './components/CheckDaySemana'
 import ViewBottom from './components/ViewBottom'
 
 export default class mainTwo extends Component {
+
+    state={
+        user: null
+    }
+
+    async componentDidMount(){
+        console.log("didmound")
+        await this.setState({user:this.props.user})
+        console.log(this.props.user)
+    }
+
     render() {
+        var {user} = this.state
         return (
             <View style={styles.container}>
                 <TouchableOpacity style={styles.iconReturn}>
                     <Image source={require('../assets/path10.png')}/>
                 </TouchableOpacity>
                 <View style={{marginTop:42,marginLeft:18}}>
-                    <Perfil />
+                    <Perfil foto={this.props.user._data.idFoto} afinidade={this.props.user._data.afinidade} avaliacao={this.props.user._data.avaliacao} nomeFilho={this.props.user._data.nomeFilho} nome={this.props.user._data.nome} />
                     <View style={styles.viewIda}>
                         <Text style={styles.ida}>Ida</Text>
                         <Text style={styles.hora}>7:30</Text>

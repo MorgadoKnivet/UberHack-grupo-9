@@ -16,7 +16,7 @@
 		0F564DBE22932DD400929203 /* InputMask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F564DBD22932DD400929203 /* InputMask.framework */; };
 		0F564DBF22932DD400929203 /* InputMask.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0F564DBD22932DD400929203 /* InputMask.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0F576A4A2295CB1A002D1A0E /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F576A482295CAF1002D1A0E /* libRNImagePicker.a */; };
-		0FB012A3225DCAB500A3C5EF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0FB012A2225DCAB400A3C5EF /* GoogleService-Info.plist */; };
+		0F751F2822C8FB02004A958E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F751F2722C8FB02004A958E /* GoogleService-Info.plist */; };
 		0FD4910C229614EE005B9356 /* libART.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FD490E1229614D3005B9356 /* libART.a */; };
 		11D1A2F320CAFA9E000508D9 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
@@ -398,7 +398,7 @@
 		0D68D47381F549D080953B10 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/native-base/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		0F564DBD22932DD400929203 /* InputMask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = InputMask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F576A1D2295CAF0002D1A0E /* RNImagePicker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNImagePicker.xcodeproj; path = "../node_modules/react-native-image-picker/ios/RNImagePicker.xcodeproj"; sourceTree = "<group>"; };
-		0FB012A2225DCAB400A3C5EF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0F751F2722C8FB02004A958E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../android/app/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0FC95271229A51F200849D10 /* RCTFBSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTFBSDK.xcodeproj; path = "../node_modules/react-native-fbsdk/ios/RCTFBSDK.xcodeproj"; sourceTree = "<group>"; };
 		0FD490DB229614D3005B9356 /* ART.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ART.xcodeproj; path = "../node_modules/react-native/Libraries/ART/ART.xcodeproj"; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
@@ -652,7 +652,7 @@
 		13B07FAE1A68108700A75B9A /* bimp */ = {
 			isa = PBXGroup;
 			children = (
-				0FB012A2225DCAB400A3C5EF /* GoogleService-Info.plist */,
+				0F751F2722C8FB02004A958E /* GoogleService-Info.plist */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -1350,8 +1350,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				0F751F2822C8FB02004A958E /* GoogleService-Info.plist in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
-				0FB012A3225DCAB500A3C5EF /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

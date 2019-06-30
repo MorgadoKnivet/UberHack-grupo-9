@@ -1,19 +1,16 @@
 class User {
-    constructor(uid,nome,sobrenome,telefone,sexo,email,idImagemPerfil,urlImagemPerfil,mototaxista,dataInicio,userState,nota,chat,historicoCorridas) {
+    constructor(uid,nome,email,enderecoCasa,enderecoEscola,nomeFilho,serie,entrada,saida,numeroFilhos) {
       this.uid = uid
       this.nome = nome
-      this.sobrenome = sobrenome
-      this.telefone = telefone
-      this.sexo = sexo
       this.email = email
-      this.idImagemPerfil = idImagemPerfil  
-      this.urlImagemPerfil = urlImagemPerfil
-      this.mototaxista = mototaxista
-      this.dataInicio = dataInicio
-      this.userState = userState
-      this.nota = nota
-      this.chat = chat
-      this.historicoCorridas = []
+      this.enderecoCasa = enderecoCasa,
+      this.enderecoEscola  = enderecoEscola,
+      this.nomeFilho = nomeFilho,
+      this.serie = serie
+      this.entrada = entrada
+      this.saida = saida,
+      this.numeroFilhos = numeroFilhos
+
     }
   
   }

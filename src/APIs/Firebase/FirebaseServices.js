@@ -1,7 +1,7 @@
 import firebase from 'react-native-firebase';
 import { AccessToken, LoginManager } from 'react-native-fbsdk';
 import User from '../../model/User'
-GLOBAL = require('../../model/GlobalState');
+//GLOBAL = require('../../model/GlobalState');
 
 module.exports = {
 
