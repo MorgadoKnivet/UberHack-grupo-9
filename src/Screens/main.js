@@ -24,6 +24,7 @@ console.disableYellowBox = true;
 
 export default class Main extends Component {
 
+  
     state={
         daySegOK: true,
         dayTerOK:false,
@@ -69,12 +70,15 @@ export default class Main extends Component {
 
     async componentDidMount (){
       let response =  await FirestoreReadCollection("PaisMotoristas")
-
+      
       console.log(response) 
 
       let array = response.response._docs
 
       this.setState({array})
+
+      this.refFirebase = firebase.firestore().collection(colectionUserOnline);
+
     }
 
     searchList = (aux) => {
