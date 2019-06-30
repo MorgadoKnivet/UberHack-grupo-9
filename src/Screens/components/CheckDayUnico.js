@@ -5,13 +5,13 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 
 // import { Container } from './styles';
 
-const CheckDayUnico = ({daySemana,on}) => (
+const CheckDayUnico = ({daySemana,on,onPress}) => (
     <View style={styles.containerInner}>
         <Text style={styles.daySemana}>{daySemana}</Text>
         
         {
             on == true ?
-                <TouchableOpacity style={{ width: 45,height: 45,backgroundColor: "#f7c417",borderRadius:45/2,justifyContent:'center',alignItems:'center',marginTop:12,}}>
+                <TouchableOpacity onPress={onPress} style={{ width: 45,height: 45,backgroundColor: "#f7c417",borderRadius:45/2,justifyContent:'center',alignItems:'center',marginTop:12,}}>
                     <Image source={require('../../assets/invalidName.png')}/>
                 </TouchableOpacity>
             :

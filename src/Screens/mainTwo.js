@@ -5,6 +5,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import Perfil from './components/perfil'
 import CheckDaySemana from './components/CheckDaySemana'
 import ViewBottom from './components/ViewBottom'
+import { FirestoreReadCollection,FirestoreUpdateCollectionDoc} from '../APIs/Firebase/FirebaseServices'
 
 export default class mainTwo extends Component {
 
@@ -18,11 +19,30 @@ export default class mainTwo extends Component {
         console.log(this.props.user)
     }
 
+    salveDB = (aux) => {
+        //
+        if (aux == "SegundaMarcado") {
+            FirestoreUpdateCollectionDoc("PaisMotoristas",this.props.user._ref.id,{segunda:true})
+        }
+        if (aux == "TercaMarcado") {
+            FirestoreUpdateCollectionDoc("PaisMotoristas",this.props.user._ref.id,{terca:true})
+        }
+        if (aux == "QuartaMarcado") {
+            FirestoreUpdateCollectionDoc("PaisMotoristas",this.props.user._ref.id,{quarta:true})
+        }
+        if (aux == "QuintaMarcado") {
+            FirestoreUpdateCollectionDoc("PaisMotoristas",this.props.user._ref.id,{quinta:true})
+        }
+        if (aux == "SextaMarcado") {
+            FirestoreUpdateCollectionDoc("PaisMotoristas",this.props.user._ref.id,{sexta:true})
+        }
+    }
+
     render() {
         var {user} = this.state
         return (
             <View style={styles.container}>
-                <TouchableOpacity style={styles.iconReturn}>
+                <TouchableOpacity  style={styles.iconReturn}>
                     <Image source={require('../assets/path10.png')}/>
                 </TouchableOpacity>
                 <View style={{marginTop:42,marginLeft:18}}>
@@ -31,8 +51,9 @@ export default class mainTwo extends Component {
                         <Text style={styles.ida}>Ida</Text>
                         <Text style={styles.hora}>7:30</Text>
                     </View>
-                    <CheckDaySemana />
+                    <CheckDaySemana onPressSegunda={()=>this.salveDB("SegundaMarcado")} onPressTerca={()=>this.salveDB("TercaMarcado")} onPressQuarta={()=>this.salveDB("QuartaMarcado")} onPressQuinta={()=>this.salveDB("QuintaMarcado")}  onPressSexta={()=>this.salveDB("SextaMarcado")}/>
                 </View>
+
                 <View style={{marginLeft:18}}>
                     
                     <View style={styles.viewIda}>
