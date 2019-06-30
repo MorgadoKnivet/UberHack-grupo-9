@@ -6,11 +6,17 @@ import Perfil from './components/perfil'
 import CheckDaySemana from './components/CheckDaySemana'
 import ViewBottom from './components/ViewBottom'
 import { FirestoreReadCollection,FirestoreUpdateCollectionDoc} from '../APIs/Firebase/FirebaseServices'
+import { FastField } from 'formik';
 
 export default class mainTwo extends Component {
 
     state={
-        user: null
+        user: null,
+        seg:false,
+        terca:false,
+        quarta:false,
+        quinta:false,
+        sexta:false,
     }
 
     async componentDidMount(){
@@ -23,18 +29,27 @@ export default class mainTwo extends Component {
         //
         if (aux == "SegundaMarcado") {
             FirestoreUpdateCollectionDoc("PaisMotoristas",this.props.user._ref.id,{segunda:true})
+            this.setState({seg:true})
         }
         if (aux == "TercaMarcado") {
             FirestoreUpdateCollectionDoc("PaisMotoristas",this.props.user._ref.id,{terca:true})
+            this.setState({terca:true})
+
         }
         if (aux == "QuartaMarcado") {
             FirestoreUpdateCollectionDoc("PaisMotoristas",this.props.user._ref.id,{quarta:true})
+            this.setState({quarta:true})
+
         }
         if (aux == "QuintaMarcado") {
             FirestoreUpdateCollectionDoc("PaisMotoristas",this.props.user._ref.id,{quinta:true})
+            this.setState({quinta:true})
+
         }
         if (aux == "SextaMarcado") {
             FirestoreUpdateCollectionDoc("PaisMotoristas",this.props.user._ref.id,{sexta:true})
+            this.setState({sexta:true})
+
         }
     }
 
@@ -63,7 +78,7 @@ export default class mainTwo extends Component {
                     <CheckDaySemana />
                 </View>
 
-                <ViewBottom />
+                <ViewBottom daySegOK={this.state.seg} daySexOK={this.state.sexta} dayQuarOK={this.state.quarta} dayTerOK={this.state.terca} dayQuinOK={this.state.quarta}/>
                
             </View>
         )

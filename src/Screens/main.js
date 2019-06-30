@@ -31,7 +31,13 @@ export default class Main extends Component {
         dayQuinOK:true,
         daySexOK: false,
         array: [],
-        arrayInicial: []
+        arrayInicial: [],
+
+        seg:false,
+        terca:false,
+        quarta:false,
+        quinta:false,
+        sexta:false,
     }
 
     onItemPress = (item) => {
@@ -165,7 +171,7 @@ export default class Main extends Component {
           </View>
           
         
-          <ViewBottom />
+          <ViewBottom daySegOK={this.state.seg} daySexOK={this.state.sexta} dayQuarOK={this.state.quarta} dayTerOK={this.state.terca} dayQuinOK={this.state.quarta}/>
              
 
       </View>
